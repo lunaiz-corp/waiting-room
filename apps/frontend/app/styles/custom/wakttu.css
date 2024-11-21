@@ -1,0 +1,16 @@
+progress {
+  @apply h-1.5 w-full;
+}
+
+progress::-webkit-progress-bar,
+progress[value]::-webkit-progress-value {
+  @apply h-1.5 rounded-[18px];
+}
+
+progress::-webkit-progress-bar {
+  @apply bg-[#cfcfcf];
+}
+
+progress::-webkit-progress-value {
+  @apply bg-[#00bfa3];
+}

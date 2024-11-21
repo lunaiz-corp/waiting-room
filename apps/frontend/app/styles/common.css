@@ -1,0 +1,11 @@
+/* Fonts */
+html,
+.font-ko,
+.font-ko * {
+  font-family: "Wanted Sans Variable", "Wanted Sans", "Product Sans", sans-serif;
+}
+
+.font-en,
+.font-en * {
+  font-family: "Product Sans", sans-serif;
+}

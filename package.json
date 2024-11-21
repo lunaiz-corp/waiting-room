@@ -1,0 +1,20 @@
+{
+  "name": "@lunaiz-corp/waiting-room",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "devDependencies": {
+    "@types/bun": "latest",
+    "eslint": "^8.42.0",
+    "@typescript-eslint/eslint-plugin": "^8.4.0",
+    "@typescript-eslint/parser": "^8.4.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "tsconfig-paths": "^4.2.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
