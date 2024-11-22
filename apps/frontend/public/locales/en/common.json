@@ -1,1 +1,13 @@
-{}
+{
+  "units": {
+    "time": {
+      "hours": "h",
+      "minutes": "m",
+      "seconds": "s"
+    },
+    "people": {
+      "singular": "person",
+      "plural": "people"
+    }
+  }
+}

@@ -1,1 +1,13 @@
-{}
+{
+  "units": {
+    "time": {
+      "hours": "시간",
+      "minutes": "분",
+      "seconds": "초"
+    },
+    "people": {
+      "singular": "명",
+      "plural": "명"
+    }
+  }
+}

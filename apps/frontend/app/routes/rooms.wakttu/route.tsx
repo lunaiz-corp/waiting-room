@@ -2,7 +2,7 @@ import { Trans, useTranslation } from "react-i18next";
 
 import "../../styles/custom/wakttu.css";
 
-export const handle = { i18n: "rooms.wakttu" };
+export const handle = { i18n: ["common", "rooms.wakttu"] };
 export default function Wakttu() {
   const { t } = useTranslation(handle.i18n);
 
@@ -20,18 +20,22 @@ export default function Wakttu() {
         <div className="inline-flex flex-col items-center gap-3">
           <h1 className="text-[28px] font-semibold text-[#272727]">
             {/* 게임 접속 대기 중이에요. */}
-            {t("title")}
+            {t("rooms.wakttu:title")}
           </h1>
 
           <h2 className="font-medium text-[#666666]">
             {/* 잠시만 기다리면 자동으로 입장돼요. */}
-            {t("description")}
+            {t("rooms.wakttu:description")}
           </h2>
         </div>
 
         <span className="text-center text-sm font-medium text-[#969696]">
           {/* ※ 접속하신 순서대로 게임에 입장되고, 새로고침 하면 대기시간이 더 길어질 수 있어요. */}
-          <Trans t={t} i18nKey={"caution"} components={{ br: <br /> }} />
+          <Trans
+            t={t}
+            i18nKey="rooms.wakttu:caution"
+            components={{ br: <br /> }}
+          />
         </span>
 
         <progress value={0.5} />
@@ -40,20 +44,21 @@ export default function Wakttu() {
           <div className="inline-flex items-center justify-between self-stretch">
             <span className="text-center text-sm font-medium text-black">
               {/* 현재 대기 인원 */}
-              {t("waiters")}
+              {t("rooms.wakttu:waiters")}
             </span>
             <span className="text-center text-sm font-semibold text-[#00bfa3]">
-              10915명
+              10915{t("units.people.plural")}
             </span>
           </div>
 
           <div className="inline-flex items-center justify-between self-stretch">
             <span className="text-center text-sm font-medium text-black ">
               {/* 예상 대기시간 */}
-              {t("estimatedWaitTime")}
+              {t("rooms.wakttu:estimatedWaitTime")}
             </span>
             <span className="text-center text-sm font-semibold text-[#00bfa3]">
-              46분 58초
+              {/* 46분 58초 */}
+              48{t("units.time.minutes")} 58{t("units.time.seconds")}
             </span>
           </div>
         </div>
@@ -61,7 +66,7 @@ export default function Wakttu() {
         <div className="inline-flex items-center justify-center gap-1.5">
           <span className="font-medium text-[#666666]">
             {/* 기다리는 동안 */}
-            {t("toy.line1")}
+            {t("rooms.wakttu:toy.line1")}
           </span>
 
           <a
@@ -72,7 +77,7 @@ export default function Wakttu() {
           >
             <span className="font-medium text-[#00bfa3]">
               {/* 이거 해보실래요? */}
-              {t("toy.line2")}
+              {t("rooms.wakttu:toy.line2")}
             </span>
 
             <svg
