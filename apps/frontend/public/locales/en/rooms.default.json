@@ -1,0 +1,9 @@
+{
+  "title": "You’re now in line.",
+  "estimatedWaitTime": "Estimated time:",
+  "description": {
+    "line1": "There are <strong>{{ ahead }}</strong> people ahead, and <strong>{{ behind }}</strong> people behind of you in the queue.",
+    "line2": "This queue is completely fair, first-come-first-served."
+  },
+  "caution": "* If you refresh this page, you may break your queue!"
+}

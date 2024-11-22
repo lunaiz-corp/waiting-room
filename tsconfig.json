@@ -24,5 +24,9 @@
     "noUnusedParameters": false,
     "noPropertyAccessFromIndexSignature": false
   },
-  "extends": ["./apps/**/tsconfig.json", "./packages/**/tsconfig.json"]
+  "extends": [
+    "./apps/frontend/tsconfig.json",
+    "./apps/backend/tsconfig.json",
+    "./packages/sdk/tsconfig.json"
+  ]
 }

@@ -1,0 +1,11 @@
+{
+  "title": "You’re now in line.",
+  "description": "Just a few minutes and you're ready to go.",
+  "caution": "* This queue is completely fair, first-come-first-served.<br />If you refresh this page, you may break your queue!",
+  "waiters": "People in line",
+  "estimatedWaitTime": "Estimated time",
+  "toy": {
+    "line1": "",
+    "line2": "Want to play a game while you wait?"
+  }
+}

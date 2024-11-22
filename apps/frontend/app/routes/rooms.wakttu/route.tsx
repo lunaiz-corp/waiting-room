@@ -1,6 +1,11 @@
+import { Trans, useTranslation } from "react-i18next";
+
 import "../../styles/custom/wakttu.css";
 
+export const handle = { i18n: "rooms.wakttu" };
 export default function Wakttu() {
+  const { t } = useTranslation(handle.i18n);
+
   return (
     <main className="font-ko flex h-screen w-screen items-center justify-center bg-white/60">
       <section className="flex flex-col items-center gap-6 rounded-2xl border border-[#dddddd] bg-white px-14 py-9">
@@ -14,18 +19,19 @@ export default function Wakttu() {
 
         <div className="inline-flex flex-col items-center gap-3">
           <h1 className="text-[28px] font-semibold text-[#272727]">
-            게임 접속 대기 중이에요.
+            {/* 게임 접속 대기 중이에요. */}
+            {t("title")}
           </h1>
 
           <h2 className="font-medium text-[#666666]">
-            잠시만 기다리면 자동으로 입장돼요.
+            {/* 잠시만 기다리면 자동으로 입장돼요. */}
+            {t("description")}
           </h2>
         </div>
 
         <span className="text-center text-sm font-medium text-[#969696]">
-          ※ 접속하신 순서대로 게임에 입장되고,
-          <br />
-          새로고침 하면 대기시간이 더 길어질 수 있어요.
+          {/* ※ 접속하신 순서대로 게임에 입장되고, 새로고침 하면 대기시간이 더 길어질 수 있어요. */}
+          <Trans t={t} i18nKey={"caution"} components={{ br: <br /> }} />
         </span>
 
         <progress value={0.5} />
@@ -33,7 +39,8 @@ export default function Wakttu() {
         <div className="flex w-full flex-col items-center justify-center gap-2 rounded-2xl border border-[#dddddd] bg-[#f7f7f7] px-10 py-4">
           <div className="inline-flex items-center justify-between self-stretch">
             <span className="text-center text-sm font-medium text-black">
-              현재 대기 인원
+              {/* 현재 대기 인원 */}
+              {t("waiters")}
             </span>
             <span className="text-center text-sm font-semibold text-[#00bfa3]">
               10915명
@@ -42,7 +49,8 @@ export default function Wakttu() {
 
           <div className="inline-flex items-center justify-between self-stretch">
             <span className="text-center text-sm font-medium text-black ">
-              예상 대기시간
+              {/* 예상 대기시간 */}
+              {t("estimatedWaitTime")}
             </span>
             <span className="text-center text-sm font-semibold text-[#00bfa3]">
               46분 58초
@@ -51,7 +59,10 @@ export default function Wakttu() {
         </div>
 
         <div className="inline-flex items-center justify-center gap-1.5">
-          <span className="font-medium text-[#666666]">기다리는 동안</span>
+          <span className="font-medium text-[#666666]">
+            {/* 기다리는 동안 */}
+            {t("toy.line1")}
+          </span>
 
           <a
             href="https://toy.wakttu.kr/"
@@ -59,7 +70,10 @@ export default function Wakttu() {
             rel="noreferrer"
             className="flex items-center justify-start gap-1"
           >
-            <span className="font-medium text-[#00bfa3]">이거 해보실래요?</span>
+            <span className="font-medium text-[#00bfa3]">
+              {/* 이거 해보실래요? */}
+              {t("toy.line2")}
+            </span>
 
             <svg
               width="18"

@@ -1,0 +1,9 @@
+{
+  "title": "현재 접속 대기 중입니다.",
+  "estimatedWaitTime": "예상 대기시간:",
+  "description": {
+    "line1": "고객님 앞에 <strong>{{ ahead }}</strong> 명, 뒤에 <strong>{{ behind }}</strong> 명의 대기자가 있습니다.",
+    "line2": "현재 이용자가 많아 잠시 대기 중이며, 접속하신 순서대로 자동 접속됩니다."
+  },
+  "caution": "※ 재 접속, 새로고침하시면 대기시간이 길어질 수 있으니 주의하세요."
+}
