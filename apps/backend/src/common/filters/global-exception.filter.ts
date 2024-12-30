@@ -5,10 +5,11 @@ import {
   HttpException,
   HttpStatus,
 } from '@nestjs/common';
-
-import APIException from '../dto/APIException.dto';
+import { BaseWsExceptionFilter, WsException } from '@nestjs/websockets';
 
 import { FastifyReply } from 'fastify';
+
+import APIException from '../dto/APIException.dto';
 
 // HttpException, APIException ...
 @Catch()
@@ -46,6 +47,38 @@ export class GlobalExceptionFilter implements ExceptionFilter {
 
       message: message['message'] || message['error'] || message,
       responseAt: responseAt,
+    });
+  }
+}
+
+// WsException ...
+@Catch()
+export class GlobalWsExceptionFilter extends BaseWsExceptionFilter {
+  catch(exception: any, host: ArgumentsHost) {
+    const client = host.switchToWs().getClient();
+    this.handleError(client, exception);
+  }
+
+  handleError(client: any, exception: any) {
+    if (!(exception instanceof WsException)) {
+      return this.handleUnknownError(exception, client);
+    }
+
+    const message = exception.getError();
+    client.emit('exception', {
+      status: 'error',
+      message: message,
+      data: null,
+      responseAt: new Date().toISOString(),
+    });
+  }
+
+  handleUnknownError(exception: any, client: any) {
+    client.emit('exception', {
+      status: 'error',
+      message: '내부 서버 오류가 발생했습니다.',
+      data: exception,
+      responseAt: new Date().toISOString(),
     });
   }
 }

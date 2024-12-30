@@ -21,26 +21,29 @@ async function bootstrap() {
 
   if (process.env.ENABLE_SWAGGER !== '0') {
     const config = new DocumentBuilder()
-      .setTitle('Specify your title here')
-      .setDescription('Specify your description here..')
+      .setTitle('lunaiz. Waiting Room API')
+      .setDescription('lunaiz. 서버 유량제어 (대기열) 시스템')
       .setVersion(version)
       .build();
 
     const document = SwaggerModule.createDocument(app, config);
 
     await SwaggerModule.setup('docs', app, document);
-    await NestjsRedoxModule.setup('redoc', app, document);
+    await NestjsRedoxModule.setup('redoc', app, document, {
+      redocBundlesDir: '../../node_modules/redoc/bundles',
+      standalone: true,
+    });
   }
 
   if (process.env.GLOBAL_CORS === '1') {
     app.enableCors({
       origin: '*',
-      credentials: true,
+      // credentials: true,
     });
   } else {
     app.enableCors({
       origin: [],
-      // credentials: true,
+      credentials: true,
     });
   }
 
